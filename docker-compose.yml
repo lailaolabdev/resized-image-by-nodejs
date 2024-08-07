@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  image-resizer:
+    build: .
+    container_name: lmi-image-resize-service
+    ports:
+      - "3002:3002"
+    volumes:
+      - /home/lmi/images:/app/images
+      - /home/lmi/files:/app/files
+    environment:
+      - NODE_ENV=production
